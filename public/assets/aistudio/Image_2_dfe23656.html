@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cipher — Decoding culture, perception, and value</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF7417',
+              bg: '#141414',
+              surface: '#1A1A1A',
+              card: '#181818',
+              border: '#2B2B2B',
+              borderLight: '#383838',
+              textMuted: '#7D7D7D',
+              textDim: '#A3A3A3',
+              textBright: '#F0F0ED'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Subtle noise and atmosphere styles */
+    .hero-gradient {
+      background: linear-gradient(108deg, #5c786d 0%, #7e8775 25%, #9b6c4b 55%, #8c4228 85%, #592518 100%);
+      box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.45);
+    }
+    .cta-gradient {
+      background: radial-gradient(circle at 75% 50%, #b85025 0%, #7d3319 40%, #3a190f 80%, #20110c 100%);
+    }
+    .grid-border-t { border-top: 1px solid #2B2B2B; }
+    .grid-border-b { border-bottom: 1px solid #2B2B2B; }
+    .grid-border-l { border-left: 1px solid #2B2B2B; }
+    .grid-border-r { border-right: 1px solid #2B2B2B; }
+    
+    /* Technical corner brackets */
+    .bracket-corner {
+      position: relative;
+    }
+    .bracket-corner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 12px; height: 12px;
+      border-top: 1.5px solid #666;
+      border-left: 1.5px solid #666;
+    }
+    .bracket-corner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 12px; height: 12px;
+      border-bottom: 1.5px solid #666;
+      border-right: 1.5px solid #666;
+    }
+  </style>
+</head>
+<body class="bg-[#141414] text-[#F0F0ED] font-sans antialiased selection:bg-[#FF7417] selection:text-white">
+<!-- BEGIN: MainHeader -->
+<header class="w-full border-b border-[#2B2B2B] bg-[#141414]/90 backdrop-blur sticky top-0 z-50">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<!-- Logo -->
+<a aria-label="Cipher Home" class="flex items-center gap-2 group" href="#">
+<svg class="w-5 h-5 text-[#FF7417]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24">
+<!-- 8-point asterisk / starburst -->
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<line x1="4.93" x2="19.07" y1="4.93" y2="19.07"></line>
+<line x1="19.07" x2="4.93" y1="4.93" y2="19.07"></line>
+</svg>
+<span class="font-bold text-xl tracking-tight text-white">Cipher</span>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center gap-8 text-[13px] text-[#9A9A9A] font-medium tracking-wide">
+<a class="hover:text-white transition-colors" href="#about">About Us</a>
+<a class="hover:text-white transition-colors" href="#platform">Platform</a>
+<a class="hover:text-white transition-colors" href="#brand-index">Brand Index</a>
+<a class="hover:text-white transition-colors" href="#compare">Compare</a>
+</nav>
+<!-- Right Action CTA -->
+<div>
+<a class="inline-flex items-center text-[12px] font-mono tracking-wider text-[#D1D1D1] hover:text-white border border-[#3A3A3A] hover:border-[#666666] px-3.5 py-1.5 transition-all" href="#analyze">
+          Analyze Brand <span class="ml-1.5 font-sans">→</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="max-w-[1400px] mx-auto px-6 pt-6 pb-12" id="about">
+<div class="relative w-full rounded-sm overflow-hidden hero-gradient p-10 sm:p-14 md:p-20 border border-[#383838]/60 min-h-[460px] flex flex-col justify-center">
+<!-- Subtle scanline / texture overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(#00000022_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none opacity-40"></div>
+<div class="relative z-10 max-w-2xl">
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#E0E0D8]/80 mb-6">
+          [ About Us ]
+        </div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-white leading-[1.1] mb-8 font-sans">
+          We study why brands<br/>hold their place
+        </h1>
+<p class="text-[14px] sm:text-[15px] leading-relaxed text-[#D6D6CF] max-w-xl font-normal font-sans">
+          Cipher was started by strategists, researchers, and data scientists who were tired of choosing between what consumers say and what markets do. We built one view that reads both, in the context of culture.
+        </p>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: MarqueeBrandGrid -->
+<section class="max-w-[1400px] mx-auto px-6 mb-24">
+<!-- Top Row -->
+<div class="grid grid-cols-2 md:grid-cols-5 border-y border-[#262626] text-xs uppercase tracking-wider text-[#737373] divide-x divide-[#262626]">
+<div class="py-4 px-6 flex items-center justify-center font-bold tracking-widest text-[#B0B0B0] hover:text-white transition-colors">
+<span class="mr-1.5 font-mono text-sm text-[#FF7417]">╱╲</span> NEXIM
+      </div>
+<div class="py-4 px-6 flex items-center justify-center font-serif lowercase italic text-[#B0B0B0] tracking-normal text-base hover:text-white transition-colors">
+<svg class="w-3.5 h-3.5 mr-1.5 text-current inline" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 0 0 18"></path></svg>
+        graphe
+      </div>
+<div class="py-4 px-6 col-span-2 md:col-span-1 flex items-center justify-center text-[11px] font-mono tracking-widest text-[#7D7D7D] text-center bg-[#161616]">
+        Selected brands in the Index
+      </div>
+<div class="py-4 px-6 flex items-center justify-center font-mono font-bold tracking-widest text-[#B0B0B0] hover:text-white transition-colors">
+<span class="mr-2 text-xs">≈</span> NORTHWAVE
+      </div>
+<div class="py-4 px-6 flex items-center justify-center font-serif tracking-widest text-[#B0B0B0] text-sm hover:text-white transition-colors">
+        † Ferro &amp; Pine
+      </div>
+</div>
+<!-- Bottom Row -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 border-b border-[#262626] text-xs uppercase tracking-wider text-[#8A8A8A] divide-x divide-[#262626]">
+<div class="py-4 px-4 flex items-center justify-center font-mono tracking-widest text-xs hover:text-white transition-colors">
+        HALDEN
+      </div>
+<div class="py-4 px-4 flex items-center justify-center font-sans tracking-tight text-xs hover:text-white transition-colors">
+<svg class="w-3 h-3 mr-1 opacity-70" fill="currentColor" viewbox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"></path></svg>
+        echoa
+      </div>
+<div class="py-4 px-4 flex items-center justify-center font-mono lowercase tracking-wide text-xs hover:text-white transition-colors">
+        ¶ parlo
+      </div>
+<div class="py-4 px-4 flex items-center justify-center font-sans italic lowercase tracking-wider text-xs hover:text-white transition-colors">
+        ↗ Driftly
+      </div>
+<div class="py-4 px-4 flex items-center justify-center font-serif italic capitalize tracking-wide text-xs hover:text-white transition-colors">
+        ◊ Saelle
+      </div>
+<div class="py-4 px-4 flex items-center justify-center font-mono tracking-wider text-xs hover:text-white transition-colors">
+        • Ostrel
+      </div>
+</div>
+</section>
+<!-- END: MarqueeBrandGrid -->
+<!-- BEGIN: StatementSection -->
+<section class="max-w-[1400px] mx-auto px-6 mb-32" id="platform">
+<div class="text-center mb-16">
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#737373] mb-4">
+        [ Our View ]
+      </div>
+<h2 class="text-3xl sm:text-4xl md:text-[42px] font-normal tracking-tight text-[#EFEFEA] max-w-3xl mx-auto leading-tight">
+        Brand value is made in culture<br class="hidden sm:inline"/> before it shows up in sales
+      </h2>
+</div>
+<!-- 3 Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Col 1 -->
+<div class="border-t border-[#333333] pt-6 flex flex-col justify-between">
+<div class="w-9 h-9 border border-[#303030] bg-[#171717] flex items-center justify-center mb-10 text-[#A0A0A0]">
+<!-- Eye Icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</div>
+<p class="text-[13px] leading-relaxed text-[#969696] font-normal">
+          A brand's position is the sum of thousands of small judgments: what people notice, what they repeat, what they would be seen with, and what they pay for.
+        </p>
+</div>
+<!-- Col 2 -->
+<div class="border-t border-[#333333] pt-6 flex flex-col justify-between">
+<div class="w-9 h-9 border border-[#303030] bg-[#171717] flex items-center justify-center mb-10 text-[#A0A0A0]">
+<!-- Bar Chart Icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<line x1="18" x2="18" y1="20" y2="10"></line>
+<line x1="12" x2="12" y1="20" y2="4"></line>
+<line x1="6" x2="6" y1="20" y2="14"></line>
+</svg>
+</div>
+<p class="text-[13px] leading-relaxed text-[#969696] font-normal">
+          Survey panels capture part of that. Sales data captures another part. Neither explains why a brand gains or loses ground, because the cause usually sits in culture.
+        </p>
+</div>
+<!-- Col 3 -->
+<div class="border-t border-[#333333] pt-6 flex flex-col justify-between">
+<div class="w-9 h-9 border border-[#303030] bg-[#171717] flex items-center justify-center mb-10 text-[#A0A0A0]">
+<!-- Cube / Layers Icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+<polyline points="2 17 12 22 22 17"></polyline>
+<polyline points="2 12 12 17 22 12"></polyline>
+</svg>
+</div>
+<p class="text-[13px] leading-relaxed text-[#969696] font-normal">
+          Cipher reads all of it together and scores a brand across five dimensions, with each score traced back to the signals that produced it.
+        </p>
+</div>
+</div>
+</section>
+<!-- END: StatementSection -->
+<!-- BEGIN: MethodSection -->
+<section class="max-w-[1400px] mx-auto px-6 mb-32" id="method">
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[#292929] pb-6 mb-12">
+<div>
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#737373] mb-2">
+          Method
+        </div>
+<h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-white">
+          How we work
+        </h2>
+</div>
+<p class="text-xs font-mono text-[#828282] mt-4 md:mt-0 tracking-wide">
+        Three stages take a brand from scattered signals to a score you can defend.
+      </p>
+</div>
+<!-- Interactive Diagram & Selector -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Steps Selection (Left Col) -->
+<div class="lg:col-span-4 flex flex-col gap-3">
+<!-- Step 1 (Active) -->
+<div class="p-5 border border-[#383838] bg-[#191919] relative rounded-sm">
+<div class="text-[10px] font-mono uppercase tracking-widest text-[#7C7C7C] mb-1">Step 1</div>
+<h3 class="text-sm font-semibold text-white mb-2">Signal Mapping</h3>
+<p class="text-[12px] leading-relaxed text-[#A4A4A4]">
+            Cipher maps where a brand's signals start, the channels they travel through, and the outcomes they land on, across press, social, and search.
+          </p>
+<!-- Corner ticks for high-tech look -->
+<span class="absolute -top-[1px] -left-[1px] w-1.5 h-1.5 bg-white"></span>
+<span class="absolute -bottom-[1px] -right-[1px] w-1.5 h-1.5 bg-white"></span>
+</div>
+<!-- Step 2 -->
+<div class="p-5 border border-[#262626] bg-[#141414] hover:border-[#383838] transition-colors cursor-pointer group">
+<div class="text-[10px] font-mono uppercase tracking-widest text-[#5E5E5E] group-hover:text-[#888] mb-1">Step 2</div>
+<h3 class="text-sm font-semibold text-[#8C8C8C] group-hover:text-white">Signal Tracing</h3>
+</div>
+<!-- Step 3 -->
+<div class="p-5 border border-[#262626] bg-[#141414] hover:border-[#383838] transition-colors cursor-pointer group">
+<div class="text-[10px] font-mono uppercase tracking-widest text-[#5E5E5E] group-hover:text-[#888] mb-1">Step 3</div>
+<h3 class="text-sm font-semibold text-[#8C8C8C] group-hover:text-white">Proven Impact</h3>
+</div>
+</div>
+<!-- Diagram Board (Right Col) -->
+<div class="lg:col-span-8 border border-[#262626] bg-[#161616]/70 p-8 sm:p-12 relative rounded-sm min-h-[440px] flex flex-col justify-center">
+<!-- Top and bottom brackets -->
+<span class="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#444]"></span>
+<span class="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#444]"></span>
+<span class="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#444]"></span>
+<span class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#444]"></span>
+<!-- Column Headers -->
+<div class="grid grid-cols-3 text-center text-[11px] font-mono tracking-[0.2em] text-[#696969] uppercase mb-10">
+<div>SOURCES</div>
+<div>CHANNELS</div>
+<div>OUTCOMES</div>
+</div>
+<!-- Circuit Diagram Content -->
+<div class="relative grid grid-cols-3 gap-6 items-center">
+<!-- Column 1: Sources -->
+<div class="flex flex-col gap-6 items-center z-10">
+<!-- Press Node -->
+<div class="w-16 h-16 border border-[#383838] bg-[#1A1A1A] flex flex-col items-center justify-center rounded-sm">
+<svg class="w-5 h-5 text-[#888] mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<line x1="4" x2="20" y1="6" y2="6"></line>
+<line x1="4" x2="20" y1="12" y2="12"></line>
+<line x1="4" x2="14" y1="18" y2="18"></line>
+</svg>
+<span class="text-[9px] font-mono uppercase text-[#777]">Press</span>
+</div>
+<!-- Social Node -->
+<div class="w-16 h-16 border border-[#383838] bg-[#1A1A1A] flex flex-col items-center justify-center rounded-sm">
+<svg class="w-5 h-5 text-[#888] mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>
+<span class="text-[9px] font-mono uppercase text-[#777]">Social</span>
+</div>
+<!-- Search Node -->
+<div class="w-16 h-16 border border-[#383838] bg-[#1A1A1A] flex flex-col items-center justify-center rounded-sm">
+<svg class="w-5 h-5 text-[#888] mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<span class="text-[9px] font-mono uppercase text-[#777]">Search</span>
+</div>
+</div>
+<!-- Column 2: Channel Hub -->
+<div class="flex flex-col items-center justify-center z-10">
+<div class="w-20 h-20 border border-[#3E3E3E] bg-[#1C1C1C] flex flex-col items-center justify-center rounded-sm">
+<svg class="w-6 h-6 text-[#999] mb-1.5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+<span class="text-[10px] font-mono uppercase text-[#999] tracking-wider">Audience</span>
+</div>
+</div>
+<!-- Column 3: Outcomes -->
+<div class="flex flex-col gap-10 items-center z-10">
+<!-- Culture Node -->
+<div class="relative group">
+<div class="w-20 h-20 border border-[#444] bg-[#1A1A1A] flex flex-col items-center justify-center rounded-sm">
+<!-- Starburst Accent -->
+<svg class="w-7 h-7 text-[#FF7417] mb-1" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<line x1="4.93" x2="19.07" y1="4.93" y2="19.07"></line>
+<line x1="19.07" x2="4.93" y1="4.93" y2="19.07"></line>
+</svg>
+<span class="text-[9px] font-mono uppercase text-[#A4A4A4]">Culture</span>
+</div>
+<!-- Floating Pill -->
+<span class="absolute -top-3 -right-6 text-[9px] font-mono text-[#FF7417] bg-[#221711] border border-[#FF7417]/40 px-1.5 py-0.5 rounded-none whitespace-nowrap">
+                VALUE +2 PTS
+              </span>
+</div>
+<!-- Commerce Node -->
+<div class="w-20 h-20 border border-[#383838] bg-[#1A1A1A] flex flex-col items-center justify-center rounded-sm">
+<svg class="w-6 h-6 text-[#7E7E7E] mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+<polyline points="2 17 12 22 22 17"></polyline>
+<polyline points="2 12 12 17 22 12"></polyline>
+</svg>
+<span class="text-[9px] font-mono uppercase text-[#777]">Commerce</span>
+</div>
+</div>
+<!-- SVG Flow Connections Underlay -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-[#353535] fill-none" stroke-width="1.2">
+<!-- Sources to Audience -->
+<path d="M 125 45 C 170 45, 170 140, 220 140"></path>
+<path d="M 125 140 L 220 140"></path>
+<path d="M 125 235 C 170 235, 170 140, 220 140"></path>
+<!-- Audience to Outcomes -->
+<path d="M 330 140 C 370 140, 370 70, 420 70"></path>
+<path d="M 330 140 C 370 140, 370 210, 420 210"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MethodSection -->
+<!-- BEGIN: DeliverablesSection -->
+<section class="max-w-[1400px] mx-auto px-6 mb-32" id="deliverables">
+<div class="mb-14">
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#737373] mb-3">
+        [ Deliverables ]
+      </div>
+<h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-white mb-2">
+        What every assessment includes
+      </h2>
+<p class="text-xs font-mono text-[#828282] tracking-wide">
+        Four outputs land with every brand in the index, every quarter.
+      </p>
+</div>
+<!-- 4 Deliverable Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 (Active / Highlighted with orange pip) -->
+<div class="border border-[#2B2B2B] bg-[#161616] p-6 flex flex-col justify-between min-h-[220px]">
+<div>
+<!-- Orange Indicator Marker -->
+<div class="flex items-center gap-2 mb-6">
+<span class="w-4 h-1 bg-[#FF7417]"></span>
+<span class="w-1.5 h-1 bg-[#FF7417]"></span>
+</div>
+<h3 class="text-base font-semibold text-white mb-3">Five dimension scores</h3>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+            Brand Codes, Cultural Currency, Social Status, Commercial Appeal, and Customer Lifecycle, each on a 0 to 100 scale.
+          </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="border border-[#2B2B2B] bg-[#161616] p-6 flex flex-col justify-between min-h-[220px]">
+<div>
+<div class="flex items-center gap-1.5 mb-6">
+<span class="w-1.5 h-1.5 bg-[#444]"></span>
+</div>
+<h3 class="text-base font-semibold text-white mb-3">Signal evidence</h3>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+            Every score links to the press, social, and search signals and the sales outcomes behind it.
+          </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="border border-[#2B2B2B] bg-[#161616] p-6 flex flex-col justify-between min-h-[220px]">
+<div>
+<div class="flex items-center gap-1.5 mb-6">
+<span class="w-1.5 h-1.5 bg-[#444]"></span>
+</div>
+<h3 class="text-base font-semibold text-white mb-3">Competitive view</h3>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+            The brand placed against up to four competitors and its category average.
+          </p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="border border-[#2B2B2B] bg-[#161616] p-6 flex flex-col justify-between min-h-[220px]">
+<div>
+<div class="flex items-center gap-1.5 mb-6">
+<span class="w-1.5 h-1.5 bg-[#444]"></span>
+</div>
+<h3 class="text-base font-semibold text-white mb-3">Action plan</h3>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+            What to protect, what to strengthen, and what to reconsider before the next quarter.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DeliverablesSection -->
+<!-- BEGIN: TeamSection -->
+<section class="max-w-[1400px] mx-auto px-6 mb-32" id="team">
+<!-- Header -->
+<div class="text-center mb-16">
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#737373] mb-4">
+        [ Our Team ]
+      </div>
+<h2 class="text-3xl sm:text-4xl md:text-[40px] font-normal tracking-tight text-[#EFEFEA] mb-3">
+        The minds behind the signals
+      </h2>
+<p class="text-xs font-mono text-[#828282] max-w-xl mx-auto tracking-wide">
+        Brand strategy, cultural research, and data intelligence working together to reveal the complete picture.
+      </p>
+</div>
+<!-- Team Photo & Content Grid -->
+<div class="border border-[#292929] bg-[#161616] overflow-hidden">
+<!-- B&W Image Container -->
+<div class="w-full relative bg-neutral-900 border-b border-[#292929]">
+<img alt="Cipher leadership team: Adrian Vale, Marcus Chen, and Julian Hart" class="w-full h-[400px] sm:h-[480px] md:h-[560px] object-cover grayscale contrast-125 brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo45d733c3rYws_Jo-AsV9ywD_XCakYTDacFatKy57lR-rci5ZqrKSOgFMwOQTpc-cNOPu13LWzTWYNYhTnNTxk4LGtFLQXFX5eILBLtYuVKy76dqVZxDzfn5mLPkQbzcFsf0fZhJ-FIxRZ7P9Xj9vZ70Oy8u9E-G5evzOUmvSimkLjIgtbX9Xl4KVLE-fyJPfjq_0IeYpNIOexEEOc2lKFjMCQdNsBJlGgYD-FVI5ye4eEljC-G6dYA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent opacity-80"></div>
+</div>
+<!-- Split Editorial Bottom Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#292929]">
+<!-- Left: Philosophy -->
+<div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between">
+<h3 class="text-2xl sm:text-3xl font-normal tracking-tight text-white mb-8">
+            Different disciplines,<br/>one connected view
+          </h3>
+<p class="text-[13px] leading-relaxed text-[#969696] max-w-md">
+            Cipher brings together strategists, cultural researchers, and data scientists who believe brand value cannot be understood through isolated metrics. We connect evidence, context, and human interpretation to reveal how brands are perceived, positioned, and changing.
+          </p>
+</div>
+<!-- Right: Bios List -->
+<div class="lg:col-span-6 divide-y divide-[#292929]">
+<!-- Bio 1 -->
+<div class="p-8 sm:p-10">
+<h4 class="text-base font-semibold text-white mb-2 font-sans">Adrian Vale</h4>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+              Adrian leads Cipher's strategic approach, translating complex brand signals into clear positioning priorities and practical direction for brand leaders.
+            </p>
+</div>
+<!-- Bio 2 -->
+<div class="p-8 sm:p-10">
+<h4 class="text-base font-semibold text-white mb-2 font-sans">Marcus Chen</h4>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+              Marcus develops the systems connecting audience research, commercial performance, and competitive data into a consistent analytical framework.
+            </p>
+</div>
+<!-- Bio 3 -->
+<div class="p-8 sm:p-10">
+<h4 class="text-base font-semibold text-white mb-2 font-sans">Julian Hart</h4>
+<p class="text-[12px] leading-relaxed text-[#969696]">
+              Julian studies the cultural codes, social behaviors, and emerging shifts influencing how brands gain relevance, meaning, and status.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TeamSection -->
+<!-- BEGIN: CtaBanner -->
+<section class="max-w-[1400px] mx-auto px-6 mb-32" id="analyze">
+<div class="relative w-full rounded-sm overflow-hidden cta-gradient p-10 sm:p-16 border border-[#452317] min-h-[360px] flex items-center justify-between">
+<!-- Left CTA Text -->
+<div class="relative z-10 max-w-md">
+<div class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#FF8B42] mb-4">
+          [ Get Started ]
+        </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-white mb-8">
+          See where your<br/>brand stands
+        </h2>
+<a class="inline-flex items-center text-[12px] font-mono tracking-wider text-white border border-white/30 hover:border-white px-4 py-2 transition-all bg-black/20 backdrop-blur-sm" href="#contact">
+          Analyze Brand <span class="ml-2 font-sans">→</span>
+</a>
+</div>
+<!-- Right Magnetic Orbit Diagram Graphic -->
+<div class="hidden md:flex relative items-center justify-center w-[480px] h-[300px]">
+<!-- Orbital / Field Lines SVG -->
+<svg class="absolute inset-0 w-full h-full" fill="none" viewbox="0 0 480 300">
+<!-- Torus / Orbit elliptical fields -->
+<ellipse cx="240" cy="150" rx="220" ry="80" stroke="#FF7417" stroke-opacity="0.35" stroke-width="0.75"></ellipse>
+<ellipse cx="240" cy="150" rx="170" ry="110" stroke="#FF7417" stroke-opacity="0.45" stroke-width="0.75"></ellipse>
+<ellipse cx="240" cy="150" rx="110" ry="135" stroke="#FF7417" stroke-opacity="0.55" stroke-width="0.75"></ellipse>
+<!-- Cross Field curves -->
+<path d="M 30 150 C 30 20, 240 20, 240 150 C 240 280, 30 280, 30 150" stroke="#FF7417" stroke-opacity="0.4" stroke-width="0.6"></path>
+<path d="M 450 150 C 450 20, 240 20, 240 150 C 240 280, 450 280, 450 150" stroke="#FF7417" stroke-opacity="0.4" stroke-width="0.6"></path>
+<!-- Orbit Node Dots -->
+<circle cx="50" cy="150" fill="#FF7417" r="3"></circle>
+<circle cx="430" cy="150" fill="#FF7417" r="3"></circle>
+<circle cx="120" cy="80" fill="#FF7417" r="2.5"></circle>
+<circle cx="360" cy="80" fill="#FF7417" r="2.5"></circle>
+<circle cx="150" cy="220" fill="#FF7417" r="2.5"></circle>
+<circle cx="330" cy="220" fill="#FF7417" r="2.5"></circle>
+<circle cx="240" cy="285" fill="#FF7417" r="2"></circle>
+<circle cx="240" cy="15" fill="#FF7417" r="2"></circle>
+</svg>
+<!-- Center Starburst Badge -->
+<div class="relative z-10 w-24 h-24 bg-[#FF7417] flex items-center justify-center shadow-2xl">
+<svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<line x1="4.93" x2="19.07" y1="4.93" y2="19.07"></line>
+<line x1="19.07" x2="4.93" y1="4.93" y2="19.07"></line>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CtaBanner -->
+<!-- BEGIN: MainFooter -->
+<footer class="w-full border-t border-[#242424] bg-[#111111] pt-16 pb-12">
+<div class="max-w-[1400px] mx-auto px-6">
+<!-- Top Row: Statement & Link Columns -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-[#222222]">
+<!-- Left Tagline -->
+<div class="md:col-span-5">
+<p class="text-xl sm:text-2xl text-[#E8E8E2] max-w-sm font-normal tracking-tight leading-snug">
+            Decoding culture,<br/>perception, and value
+          </p>
+</div>
+<!-- Right Nav Columns -->
+<div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+<!-- Col 1 -->
+<div>
+<h5 class="text-[11px] font-mono text-[#5A5A5A] uppercase tracking-widest mb-4">Explore</h5>
+<ul class="space-y-2.5 text-xs text-[#909090]">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Platform</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Brand Index</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Compare</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Resources</a></li>
+</ul>
+</div>
+<!-- Col 2 -->
+<div>
+<h5 class="text-[11px] font-mono text-[#5A5A5A] uppercase tracking-widest mb-4">Dimensions</h5>
+<ul class="space-y-2.5 text-xs text-[#909090]">
+<li><a class="hover:text-white transition-colors" href="#">Brand Codes</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Cultural Currency</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Social Status</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Commercial Appeal</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Customer Lifecycle</a></li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div>
+<h5 class="text-[11px] font-mono text-[#5A5A5A] uppercase tracking-widest mb-4">Company</h5>
+<ul class="space-y-2.5 text-xs text-[#909090]">
+<li><a class="hover:text-white transition-colors" href="#">Our View</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Team</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Method</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Full Index</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Live Signals</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Middle: Big Brand Signature & Spectrum Chart -->
+<div class="pt-12 pb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-b border-[#222222]">
+<!-- Large Bold Wordmark with Icon -->
+<div class="flex items-center gap-4">
+<svg class="w-14 h-14 sm:w-20 sm:h-20 text-[#FF7417] flex-shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<line x1="4.93" x2="19.07" y1="4.93" y2="19.07"></line>
+<line x1="19.07" x2="4.93" y1="4.93" y2="19.07"></line>
+</svg>
+<span class="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-none">
+            Cipher
+          </span>
+</div>
+<!-- Abstract Color Spectrum / Swatch Bar -->
+<div class="w-64 h-16 border border-[#333333] relative overflow-hidden bg-gradient-to-r from-[#4d6a5d] via-[#a36940] to-[#2f1915] flex">
+<!-- Subtle vertical slits imitating cultural data swatches -->
+<div class="w-full h-full grid grid-cols-12 opacity-30 divide-x divide-black pointer-events-none">
+<div></div><div></div><div></div><div></div>
+<div></div><div></div><div></div><div></div>
+<div></div><div></div><div></div><div></div>
+</div>
+</div>
+</div>
+<!-- Bottom Disclaimer / Legal Row -->
+<div class="pt-8 text-[11px] font-mono text-[#555555] tracking-wide flex flex-col sm:flex-row justify-between gap-4">
+<div>
+          © 2026 Cipher • All brands shown are fictional • All scores are demonstration data
+        </div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

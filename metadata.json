@@ -1,0 +1,6 @@
+{
+  "name": "Cipher — Brand Cultural Intelligence",
+  "description": "Decoding culture, perception, and value. Cipher maps brand signals across press, social, and search to score brands across five cultural and commercial dimensions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
